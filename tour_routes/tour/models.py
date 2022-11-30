@@ -53,7 +53,9 @@ class Sight(models.Model):
 
 # Kelionės pradžios, pabaigos ir tarpiniai taškai
 class Route(models.Model):
-    name = models.CharField(_('name'), max_length=255)
+    name = models.CharField(_('name'),
+        help_text=_('if travel route stop, then write rout with main stop names, if excursion, then write only city name'),
+        max_length=255)
 
     def __str__(self) -> str:
         return self.name
@@ -73,7 +75,7 @@ class RouteSight(models.Model):
     )
 
     def __str__(self) -> str:
-        return f"{self.sight} on {self.route}"
+        return f"Stop {self.sight} on route {self.route}"
 
 # Prisijungiantiems asmenims
 class TourGuide(models.Model):
@@ -85,4 +87,5 @@ class TourGuide(models.Model):
         related_name='tour_guide'
     )
 
-
+    def __str__(self) -> str:
+        return self.user
