@@ -2,9 +2,11 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
+# Standartinis Django user-io modelis
 User = get_user_model()
 
 
+# Pagrindinė informacija apie lankomą šalį
 class Country(models.Model):
     name = models.CharField(_('name'), max_length=255)
     main_info = models.TextField(_('main_info'))
@@ -13,6 +15,7 @@ class Country(models.Model):
         return self.name
 
 
+# Pagrindinė informacija apie lankomą/pravažiuojamą miestą
 class City(models.Model):
     name = models.CharField(_('name'), max_length=255)
     history = models.CharField(_('history'), max_length=255)
@@ -26,6 +29,7 @@ class City(models.Model):
         return self.name
 
 
+# Kaupsime informaciją apie konkrečius lankomus objektus mieste
 class Sight(models.Model):
     name = models.CharField(_('name'), max_length=50)
     facts = models.TextField(_('facts'))
@@ -43,7 +47,7 @@ class Sight(models.Model):
         return self.name
 
 
-
+# Kelionės pradžios, pabaigos ir tarpiniai taškai
 class Route(models.Model):
     name = models.CharField(_('name'), max_length=255)
 
@@ -65,6 +69,7 @@ class RouteSight(models.Model):
     )
 
 
+# Prisijungiantiems asmenims
 class TourGuide(models.Model):
     phone = models.CharField(_('phone'), max_length=20)
     user_id = models.ForeignKey(
