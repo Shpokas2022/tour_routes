@@ -7,10 +7,16 @@ class SightAdmin(admin.ModelAdmin):
     list_display_links = ('name',)
     readonly_fields = ('get_google_link',)
 
+class CityAdmin(admin.ModelAdmin):
+    list_display = ('name', 'country')
 
-admin.site.register(models.City)
+class RouteAdmin(admin.ModelAdmin):
+    list_display=('name',)
+
+
+admin.site.register(models.City, CityAdmin)
 admin.site.register(models.Country)
-admin.site.register(models.Route)
+admin.site.register(models.Route, RouteAdmin)
 admin.site.register(models.RouteSight)
 admin.site.register(models.TourGuide)
 admin.site.register(models.Sight, SightAdmin)

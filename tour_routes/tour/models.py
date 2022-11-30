@@ -60,18 +60,20 @@ class Route(models.Model):
 
 
 class RouteSight(models.Model):
-    route_id = models.ForeignKey(
+    route = models.ForeignKey(
         Route,
         verbose_name=_('route'),
         on_delete=models.SET_NULL, null=True, blank=True,
         related_name='route',
     )
-    sight_id = models.ForeignKey(
+    sight = models.ForeignKey(
         Sight,
         verbose_name=_('sight'),
         on_delete=models.SET_NULL, null=True, blank=True,
     )
 
+    def __str__(self) -> str:
+        return f"{self.sight} on {self.route}"
 
 # Prisijungiantiems asmenims
 class TourGuide(models.Model):
