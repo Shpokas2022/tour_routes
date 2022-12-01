@@ -2,19 +2,21 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from .models import *
 
+menu = ["Apie svetainę", "Pridėti straipsnį", "Komentarai", "Įeiti"]
 
-menu = [{'title': "Apie svetainę", 'url_name': 'about'},
-        {'title': "Pridėti straipsnį", 'url_name': 'add_page'},
-        {'title': "Komentarai", 'url_name': 'comments'},
-        {'title': "Įeiti", 'url_name': 'login'},
-]
+# menu = [{'title': "Apie svetainę", 'url_name': 'about'},
+#         {'title': "Pridėti straipsnį", 'url_name': 'add_page'},
+#         {'title': "Komentarai", 'url_name': 'comments'},
+#         {'title': "Įeiti", 'url_name': 'login'},
+# ]
 
 def index(request):
-    return render(request, 'tour/index.html', {'menu':menu, 'title':'Apie svetainę'})
+    sights = Sight.objects.all()
+    return render(request, 'tour/index.html', {'sights': sights, 'menu':menu, 'title':'Apie svetainę'})
 
 def about(request):
-    return render(request, 'tour/about.html', {'title':'Kelionių vadovų puslapis'})
-#     return render(request, 'tour/about.html', {'menu':menu, 'title': 'Antrasis puslapis'})
+    return render(request, 'tour/about.html', {'menu':menu, 'title':'Kelionių vadovų puslapis'})
+
 
 # def add_page(request):
 #     return HttpResponse(f"<h1>Pridėti straipsnį</h1>")
