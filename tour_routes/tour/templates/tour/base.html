@@ -9,16 +9,31 @@
     <link rel="stylesheet" href="{% static 'tour/css/base.css' %}">
 </head>
 <body>
-    {% block mainmenu %}
-    <ul>
-        {% for m in menu %}
-            <li>{{ m }}</li>
-        {% endfor %}
-    </ul>
-    {% endblock mainmenu %}
-
-    {% block content %}
-
-    {% endblock content %}
+    <header>
+        <div class="container">
+            {% block nav %}
+                <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'admin:index' %}">Admin</a>
+            {% endblock nav %}
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            {% block content %}
+            {% comment %} <ul>
+                {% for m in menu %}
+                    <li>{{ m }}</li>
+                {% endfor %}
+            </ul> {% endcomment %}
+            {% endblock content %}
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            {% block footer %}
+            <p> (C)2022 Litua Travel </p>
+            {% endblock footer %}
+        </div>
+    </footer>
 </body>
 </html>
