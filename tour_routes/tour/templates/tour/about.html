@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-{% comment %} {% load static %}
+{% load static %}
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
-{% get_available_languages as LANGUAGES %} {% endcomment %}
+{% get_available_languages as LANGUAGES %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,9 +12,8 @@
     {% comment %} <link rel="stylesheet" href="{% static 'library/css/base.css' %}"> {% endcomment %}
 </head>
 <body>
-    <ul>
-        {% for m in menu %}
-        <li>{{ m }}</li>
-        {% endfor %}
+    <main>
+        <h1> Apie PROJEKTĄ </h1>
+    </main>
 </body>
 </html>
