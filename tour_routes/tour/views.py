@@ -1,18 +1,34 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, Http404
-from .models import *
+# from .models import *
+from . models import Country, City, Sight, Route, RouteSight, TourGuide
 
-menu = ["Apie svetainę", "Pridėti straipsnį", "Komentarai", "Įeiti"]
-
-# menu = [{'title': "Apie svetainę", 'url_name': 'about'},
-#         {'title': "Pridėti straipsnį", 'url_name': 'add_page'},
-#         {'title': "Komentarai", 'url_name': 'comments'},
-#         {'title': "Įeiti", 'url_name': 'login'},
-# ]
 
 def index(request):
-    sights = Sight.objects.all()
-    return render(request, 'tour/index.html', {'sights': sights, 'menu':menu, 'title':'Apie svetainę'})
+    city_count = City.objects.count()
+    route_count = Route.objects.count()
+    sight_count = Sight.objects.count()
+
+    context = {
+        'city_count': city_count,
+        'route_count': route_count,
+        'sight_count': sight_count,
+    }
+
+    return render(request, 'tour/index.html', context)
+
+# PAGAL WOMAN
+menu = ["Apie svetainę", "Pridėti straipsnį", "Komentarai", "Įeiti"]
+
+# # menu = [{'title': "Apie svetainę", 'url_name': 'about'},
+# #         {'title': "Pridėti straipsnį", 'url_name': 'add_page'},
+# #         {'title': "Komentarai", 'url_name': 'comments'},
+# #         {'title': "Įeiti", 'url_name': 'login'},
+# # ]
+
+# def index(request):
+#     sights = Sight.objects.all()
+#     return render(request, 'tour/index.html', {'sights': sights, 'menu':menu, 'title':'Apie svetainę'})
 
 def about(request):
     return render(request, 'tour/about.html', {'menu':menu, 'title':'Kelionių vadovų puslapis'})
