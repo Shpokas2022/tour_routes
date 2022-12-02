@@ -1,0 +1,10 @@
+{% extends 'tour/base.html' %}
+{% block title %}City{% endblock title %}
+{% block content %}
+    <h1>{{city}} city</h1>
+        <ul>
+            {% for sight in city.sights.all %}
+            <li>{{sight}}</li>
+            {% endfor %}
+        </ul>
+{% endblock content %}

@@ -4,6 +4,6 @@
 <h1>Cities</h1>
 <ul>
     {% for city in cities %}
-    {{city}}
+    <li><a href="{% url 'city' city.id %}">{{city}}</a></li>
     {% endfor %}
 {% endblock content%}
