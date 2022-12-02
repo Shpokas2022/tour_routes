@@ -1,4 +1,3 @@
-
 {% extends 'tour/base.html' %}
 
 {% comment %} {% block content %}
@@ -13,10 +12,13 @@
     {% endfor %}
 </ul>
 {% endblock content %} {% endcomment %}
-
+{% block content %}
+<h1>Kelionių maršrutų puslapis</h1>
 <ul>
     <li>Total cities: {{ city_count }}</li>
     <li>Total tours: {{ route_count }}</li>
     <li>Total sights: {{ sight_count}}</li>
 </ul>
+
+{% endblock content %}
 

@@ -17,8 +17,15 @@ def index(request):
 
     return render(request, 'tour/index.html', context)
 
+
+def cities(request):
+    return render(request, 'tour/cities.html', {'cities':City.objects.all()})
+
+def city(request, city_id):
+    pass
+
 # PAGAL WOMAN
-menu = ["Apie svetainę", "Pridėti straipsnį", "Komentarai", "Įeiti"]
+# menu = ["Apie svetainę", "Pridėti straipsnį", "Komentarai", "Įeiti"]
 
 # # menu = [{'title': "Apie svetainę", 'url_name': 'about'},
 # #         {'title': "Pridėti straipsnį", 'url_name': 'add_page'},
@@ -29,9 +36,6 @@ menu = ["Apie svetainę", "Pridėti straipsnį", "Komentarai", "Įeiti"]
 # def index(request):
 #     sights = Sight.objects.all()
 #     return render(request, 'tour/index.html', {'sights': sights, 'menu':menu, 'title':'Apie svetainę'})
-
-def about(request):
-    return render(request, 'tour/about.html', {'menu':menu, 'title':'Kelionių vadovų puslapis'})
 
 
 # def add_page(request):
