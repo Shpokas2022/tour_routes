@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseNotFound, Http404
+from django.views.generic import ListView, DetailView
 # from .models import *
 from . models import Country, City, Sight, Route, RouteSight, TourGuide
 
@@ -22,6 +23,16 @@ def cities(request):
 
 def city(request, city_id):
     return render(request, 'tour/city.html',{'city':get_object_or_404(City, id=city_id)})
+
+def sights(request):
+    return render(request, 'tour/sights.html', {'sights':Sight.objects.all()})
+
+def sight(request, sight_id):
+    return render(request, 'tour/sight.html', {'sight':get_object_or_404(Sight, id=sight_id)})
+    
+# def SightListView(ListView):
+#     model = Sight
+#     template_name = 'tour/sight_list.html'
 
 
 # PAGAL WOMAN
