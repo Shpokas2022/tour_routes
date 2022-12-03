@@ -1,0 +1,8 @@
+{% extends 'tour/base.html' %}
+{% block title %}{{ object }}{% endblock title %}
+{% block content %}
+    <h1>{{ object.name }}</h1>
+    <div class="object.facts">
+        {{ object.facts }}
+    </div>
+{% endblock content %}

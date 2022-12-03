@@ -1,0 +1,12 @@
+{% extends 'tour/base.html' %}
+{% block title %}Sights{% endblock title %}
+{% block content %}
+<h1>Sights</h1>
+<ul>
+    {% for sight in sight_list %}
+        <li>{{sight}}</li>
+        {% comment %} <li><a href="{% url 'sight' sight.pk %}">{{sight}}</a></li> {% endcomment %}
+
+    {% endfor %}
+</ul>
+{% endblock content%}

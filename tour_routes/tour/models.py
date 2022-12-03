@@ -72,6 +72,7 @@ class RouteSight(models.Model):
         Sight,
         verbose_name=_('sight'),
         on_delete=models.SET_NULL, null=True, blank=True,
+        related_name='sight'
     )
 
     def __str__(self) -> str:

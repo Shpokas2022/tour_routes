@@ -4,7 +4,8 @@
     <h1>{{city}} city</h1>
         <ul>
             {% for sight in city.sights.all %}
-            <li><a ref="{ url 'sight' sight.id %}">{{sight}}</a></li>
+            <li><a ref="{ url 'sight' sight.id %}"><h2>{{sight}}</h2></a></li>
+            <p>{{ sight.facts }}</p>
             {% endfor %}
         </ul>
 {% endblock content %}
