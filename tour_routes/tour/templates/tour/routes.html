@@ -1,0 +1,11 @@
+{% extends 'tour/base.html' %}
+{% block title %}Routes{% endblock title %}
+{% block content %}
+<h1>Routes</h1>
+<ul>
+    {% for r in routes %}
+    <li>{{r}}</li>
+        {% comment %} <li><a href="{% url 'r' route.id %}">{{r}}</a></li> {% endcomment %}
+    {% endfor %}
+</ul>
+{% endblock content%}
