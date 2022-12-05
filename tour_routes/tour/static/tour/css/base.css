@@ -65,3 +65,8 @@ footer .container {
 table {
     margin: 0.5rem 1rem;
 }
+
+.form-error {
+    border: 3px solid #900;
+    background-color: #f99;
+}
