@@ -2,13 +2,12 @@
 {% load static %}
 {% block title %}Route{% endblock title %}
 {% block content %}
-    <h1>{{route}} route</h1>
+    <h1>{{route}}</h1>
         <ul>
-            {% for p in posts %}
-            <li>
-                <h2>{{p.route}}</h2>
-                <p>{{p.sight}}</p>
-            </li>
+            {% for sight in route.sights.all %}
+            {% with sight.sight as sight %}
+            {% include 'tour/inc/sight_list_item.html' %}
+            {% endwith %}
             {% endfor %}
         </ul>
 {% endblock content %}

@@ -1,0 +1,9 @@
+{% load static %}
+<li><a ref="{ url 'sight' sight.id %}"><h2>{{sight}}</h2></a>
+    {% if sight.photo %}  
+        <img src="{{ sight.photo.url }}">
+    {% else %}
+        <img src="{% static 'tour/img/LituaTravel-j_b.png' %}">
+    {% endif %}
+<p>{{ sight.facts|linebreaks|truncatewords:50 }}</p>
+</li>

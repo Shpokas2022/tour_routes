@@ -5,14 +5,7 @@
     <h1>{{city}} city</h1>
         <ul>
             {% for sight in city.sights.all %}
-            <li><a ref="{ url 'sight' sight.id %}"><h2>{{sight}}</h2></a></li>
-            {% comment %} <p>{{ sight.photo.url }}</p> {% endcomment %}
-                {% if sight.photo %}  
-                    <img src="{{ sight.photo.url }}">
-                {% else %}
-                    <img src="{% static 'tour/img/LituaTravel-j_b.png' %}">
-                {% endif %}
-            <p>{{ sight.facts|linebreaks|truncatewords:50 }}</p>
+            {% include 'tour/inc/sight_list_item.html' %}
             {% endfor %}
         </ul>
 {% endblock content %}
