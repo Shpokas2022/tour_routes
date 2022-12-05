@@ -3,7 +3,7 @@ from . import models
 
 
 class SightAdmin(admin.ModelAdmin):
-    list_display = ('name', 'street', 'city', 'get_google_link')
+    list_display = ('name', 'street', 'city', 'photo', 'get_google_link')
     list_display_links = ('name',)
     readonly_fields = ('get_google_link',)
     search_fields = ('name', 'city__name', )

@@ -1,0 +1,14 @@
+{% extends 'tour/base.html' %}
+{% load static %}
+{% block title %}Route{% endblock title %}
+{% block content %}
+    <h1>{{route}} route</h1>
+        <ul>
+            {% for p in posts %}
+            <li>
+                <h2>{{p.route}}</h2>
+                <p>{{p.sight}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+{% endblock content %}

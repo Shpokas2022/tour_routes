@@ -34,7 +34,7 @@ class City(models.Model):
 class Sight(models.Model):
     name = models.CharField(_('name'), max_length=50)
     facts = models.TextField(_('facts'))
-    photo = models.ImageField(_('photo'), blank=True, null=True)
+    photo = models.ImageField(_('photo'), upload_to='media', blank=True, null=True)
     street = models.CharField(_('street'), max_length=255)
     google_link = models.URLField(_('coordinates'), max_length=200, null=True)
     city = models.ForeignKey(

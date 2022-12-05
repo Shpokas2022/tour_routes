@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 from . import local_settings
 
@@ -106,6 +107,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+LANGUAGES = [
+    (LANGUAGE_CODE, _('US ENGLISH')),
+    ('lt', _('Lithuanian')),
+]
 
 TIME_ZONE = 'UTC'
 
@@ -119,6 +124,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR.joinpath('static')
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR.joinpath('media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

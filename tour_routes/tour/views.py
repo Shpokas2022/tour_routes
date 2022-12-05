@@ -23,10 +23,13 @@ def cities(request):
 def city(request, city_id):
     return render(request, 'tour/city.html',{'city':get_object_or_404(City, id=city_id)})
 
+
 def routes(request):
     return render(request, 'tour/routes.html', {'routes':Route.objects.all()})
 
 
+def route(request, route_id):
+    return render(request, 'tour/route.html', {'route':get_object_or_404(Route, id=route_id)})
 
 class SightListView(ListView):
     model = Sight

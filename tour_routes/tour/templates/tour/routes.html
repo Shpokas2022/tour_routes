@@ -3,9 +3,9 @@
 {% block content %}
 <h1>Routes</h1>
 <ul>
-    {% for r in routes %}
-    <li>{{r}}</li>
-        {% comment %} <li><a href="{% url 'r' route.id %}">{{r}}</a></li> {% endcomment %}
+    {% for route in routes %}
+    {% comment %} <li>{{r}}</li> {% endcomment %}
+        <li><a href="{% url 'route' route.id %}">{{route}}</a></li>
     {% endfor %}
 </ul>
 {% endblock content%}
