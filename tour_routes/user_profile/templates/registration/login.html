@@ -13,6 +13,7 @@
 
 {#Vartotojo parametrus perduosime ne atviru tekstu, o per post-ą#}
 <form method="post" action="{% url 'login' %}">
+{#csfr yra saugumo opcija, kuri neleidžia kurti post formų.T.y neleidžia botams pildyti formų#}
 {% csrf_token %}
 <table>
     <tr>
@@ -24,6 +25,7 @@
         <td>{{ form.password }}</td>
     </tr>
     <tr>
+    {#susikuriame tuscia td, tam, kad Prisijungti mygtukas susilygiuotu su kitais ivedimo laukais#}
     <td></td>
     <td>
         <input type="submit" value="Prisijungti">
@@ -33,3 +35,4 @@
 </form>
 <p><a href="{% url 'password_reset' %}">Pamiršote slaptažodį?</a></p>
 {% endblock content %}
+

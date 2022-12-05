@@ -59,3 +59,9 @@ footer .container {
     display: flex;
     align-content: stretch;
 }
+
+/* login.html darom formatavimą */
+
+table {
+    margin: 0.5rem 1rem;
+}
