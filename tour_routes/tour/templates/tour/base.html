@@ -16,13 +16,15 @@
                 <a href="{% url 'cities' %}">Cities</a>
                 {% comment %} <a href="{% url 'sights' %}">Sights</a> {% endcomment %}
                 <a href="{% url 'routes' %}">Routes</a>
+                <span class="spacer"></span>
                 {% if user.is_authenticated %}
                     <span>{{ user }} </span>
-                    <a href="{% url 'logout' %}">Atsijungti</a>
                     {# Admino linkas nebus rodomas, kol nebus prisijungta su administratoriaus teisėmis#}
                     {% if user.is_superuser or user_is_staff %}
                         <a href="{% url 'admin:index' %}">Admin</a>
                     {% endif %}
+                    <a href="{% url 'logout' %}">Atsijungti</a>
+
                 {% else %}
                         <span></span>
                         <a href="{% url 'login' %}">Prisijungti</a>
