@@ -8,11 +8,15 @@ def index(request):
     city_count = City.objects.count()
     route_count = Route.objects.count()
     sight_count = Sight.objects.count()
+    visits_count = request.session.get('visits_count', 1)
+    request.session['visits_count'] = visits_count + 1
+
 
     context = {
         'city_count': city_count,
         'route_count': route_count,
         'sight_count': sight_count,
+        'visits_count': visits_count,
     }
 
     return render(request, 'tour/index.html', context)

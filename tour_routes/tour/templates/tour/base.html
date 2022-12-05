@@ -14,7 +14,7 @@
             {% block nav %}
                 <a href="{% url 'index' %}">Home</a>
                 <a href="{% url 'cities' %}">Cities</a>
-                <a href="{% url 'sights' %}">Sights</a>
+                {% comment %} <a href="{% url 'sights' %}">Sights</a> {% endcomment %}
                 <a href="{% url 'routes' %}">Routes</a>
                 <a href="{% url 'admin:index' %}">Admin</a>
             {% endblock nav %}
