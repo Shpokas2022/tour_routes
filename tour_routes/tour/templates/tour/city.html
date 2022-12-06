@@ -3,7 +3,7 @@
 {% block title %}City{% endblock title %}
 {% block content %}
     <h1>{{city}} city</h1>
-        <ul>
+        <ul class='sight_list'>
             {% for sight in city.sights.all %}
             {% include 'tour/inc/sight_list_item.html' %}
             {% endfor %}

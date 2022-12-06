@@ -3,7 +3,7 @@
 {% block title %}Route{% endblock title %}
 {% block content %}
     <h1>{{route}}</h1>
-        <ul>
+        <ul class='sight_list'>
             {% for sight in route.sights.all %}
             {% with sight.sight as sight %}
             {% include 'tour/inc/sight_list_item.html' %}

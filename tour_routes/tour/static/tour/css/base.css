@@ -85,3 +85,28 @@ table {
     border: 3px solid #900;
     background-color: #f99;
 }
+
+/* Forminame nuotraukų tinklelį */
+
+ul.sight_list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+li.sight {
+    flex-basis: 15rem;
+    border: 1px solid #999;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0rem
+}
+
+li.sight img {
+    max-width: 100%;
+}
+
+/* li.sight h2 {
+    padding: 1rem;
+} */
+

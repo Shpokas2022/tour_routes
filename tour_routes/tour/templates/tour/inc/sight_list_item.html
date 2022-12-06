@@ -1,9 +1,14 @@
 {% load static %}
-<li><a ref="{ url 'sight' sight.id %}"><h2>{{sight}}</h2></a>
-    {% if sight.photo %}  
-        <img src="{{ sight.photo.url }}">
-    {% else %}
-        <img src="{% static 'tour/img/LituaTravel-j_b.png' %}">
-    {% endif %}
-<p>{{ sight.facts|linebreaks|truncatewords:50 }}</p>
+<li class='sight'>
+    <a ref="{ url 'sight' sight.id %}"></a>
+        {% if sight.photo %}  
+            <img src="{{ sight.photo.url }}">
+        {% else %}
+            <img src="{% static 'tour/img/LituaTravel-j_b.png' %}">
+        {% endif %}
+        <h3>{{sight}}</h3>
+        {% comment %} <h3><a href="{% url 'sight' get_google_link %}">{{sight}}</a></h3> {% endcomment %}
+<p>{{ sight.facts|linebreaks|truncatewords:30 }}</p>
+<p>{{ sight.city }}</p>
+<p>{{ sight.google_link }}</p>
 </li>
