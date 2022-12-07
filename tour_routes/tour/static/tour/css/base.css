@@ -81,6 +81,34 @@ table {
     margin: 0.5rem 1rem;
 }
 
+.table-grid-cell {
+    display: inline-block;
+    align-self: stretch;
+    justify-self: stretch;
+    background-color: #fff;
+    padding: 0.5;
+    border-bottom: 1px solid #999;
+}
+.table-grid {
+    display: grid;
+    padding: 0.5rem;
+}
+
+.form-grid {
+    grid-template-columns: 0.25fr 3fr;
+}
+
+.form-grid div {
+    display: inline-block;
+    padding: 0.5rem;
+    align-self: center;
+    justify-self: stretch;
+}
+
+.form-grid input {
+    width: 30%;
+}
+
 .form-error {
     border: 3px solid #900;
     background-color: #f99;
@@ -93,6 +121,23 @@ ul.sight_list{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+.alert {
+    padding: 0.5rem;
+    border: 3px solid #999;
+}
+
+.alert-success {
+    background-color: #9f9;
+    color: #070;
+    border-color: #070;
+}
+
+.alert-error {
+    background-color: #f99;
+    color: #900;
+    border-color: #900;
 }
 
 li.sight {

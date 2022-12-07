@@ -21,7 +21,11 @@ def index(request):
     return render(request, 'tour/index.html', context)
 
 def cities(request):
-    paginator = Paginator(City.objects.all(), 10)
+    cities = City.objects.all()
+    search = request.GET.get('search')
+    if search:
+        cities = cities.filter(cities_facts__incontains=search)
+    paginator = Paginator(cities, 10)
     page_number = request.GET.get('page')
     paged_cities = paginator.get_page(page_number)
     # return render(request, 'tour/cities.html', {'cities':City.objects.all()})
@@ -47,7 +51,6 @@ def route(request, route_id):
 
 def route_view(request, route_id):
     return render(request, 'tour/route.html', {'route':get_object_or_404(Route, id=route_id)})
-
     
 # class SightListView(ListView):
 #     model = Sight
