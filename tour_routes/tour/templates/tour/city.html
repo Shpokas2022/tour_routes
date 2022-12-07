@@ -1,8 +1,22 @@
 {% extends 'tour/base.html' %}
 {% load static %}
 {% block title %}City{% endblock title %}
+{% comment %} <div class="paginator">
+    {% if city.has_other_pages %}
+        {% for page_number in city.paginator.page_range %}
+            {% if page_number == city.number %}
+                <span>{{ page_number }}</span>
+            {% else %}
+                <a href="?page={{ page_number }}">{{ page_number }}</a>
+            {% endif %}
+        {%endfor%}
+    {%endif%}
+</div> {% endcomment %}
 {% block content %}
     <h1>{{city}} city</h1>
+    {% with city_list as page_obj %}
+    {% include 'tour/inc/paginator_search.html' %}
+    {% endwith %}
         <ul class='sight_list'>
             {% for sight in city.sights.all %}
             {% include 'tour/inc/sight_list_item.html' %}

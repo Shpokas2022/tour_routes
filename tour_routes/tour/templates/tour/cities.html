@@ -2,6 +2,17 @@
 {% block title %}Cities{% endblock title %}
 {% block content %}
 <h1>Cities</h1>
+<div class="paginator">
+    {% if cities.has_other_pages %}
+        {% for page_number in cities.paginator.page_range %}
+            {% if page_number == cities.number %}
+                <span>{{ page_number }}</span>
+            {% else %}
+                <a href="?page={{ page_number }}">{{ page_number }}</a>
+            {% endif %}
+        {%endfor%}
+    {%endif%}
+</div>
 <ul>
     {% for city in cities %}
     <li><a href="{% url 'city' city.id %}">{{city}}</a></li>

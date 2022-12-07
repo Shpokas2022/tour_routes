@@ -106,7 +106,18 @@ li.sight img {
     max-width: 100%;
 }
 
-/* li.sight h2 {
-    padding: 1rem;
-} */
+.paginator {
+    margin: 0.5rem;
+}
 
+.paginator a, .paginator span {
+    display: inline-block;
+    padding: 0.25rem;
+    margin: 0.05rem;
+    text-decoration: none;
+}
+
+.paginator span {
+    background-color: #236;
+    color: #fff;
+}

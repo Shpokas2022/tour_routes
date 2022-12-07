@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django.utils.html import format_html
+from django.urls import reverse
 
 # Standartinis Django user-io modelis
 User = get_user_model()
@@ -48,8 +49,9 @@ class Sight(models.Model):
         return self.name
     
     def get_google_link(self):
-        return format_html('<a href="{link}">{link}</a>', link=self.google_link)
+        return format_html('<a target="_blank" href="{link}">{link}</a>', link=self.google_link)
 
+       
 
 # Kelionės pradžios, pabaigos ir tarpiniai taškai
 class Route(models.Model):
