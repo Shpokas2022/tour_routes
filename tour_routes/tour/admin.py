@@ -29,9 +29,14 @@ class RouteSightAdmin(admin.ModelAdmin):
     search_fields = ('route__name',)
 
 
+class SightReviewAdmin(admin.ModelAdmin):
+    list_display = ('sight', 'reader', 'created_at')
+
+
 admin.site.register(models.City, CityAdmin)
 admin.site.register(models.Country)
 admin.site.register(models.Route, RouteAdmin)
 admin.site.register(models.RouteSight, RouteSightAdmin)
 admin.site.register(models.TourGuide)
 admin.site.register(models.Sight, SightAdmin)
+admin.site.register(models.SightReview, SightReviewAdmin)

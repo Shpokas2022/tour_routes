@@ -93,3 +93,25 @@ class TourGuide(models.Model):
 
     def __str__(self) -> str:
         return self.user
+
+class SightReview(models.Model):
+    sight = models.ForeignKey(
+        Sight, 
+        verbose_name=_('sight'), 
+        on_delete=models.CASCADE, 
+        related_name='reviews',
+    )
+    reader = models.ForeignKey(
+        get_user_model(), 
+        verbose_name=_('reader'), 
+        on_delete=models.CASCADE, 
+        related_name='sight_reviews'
+    )
+    created_at = models.DateTimeField("created at", auto_now_add=True)
+    content = models.TextField("content", max_length=10000)
+
+    def __str__(self):
+        return f"{self.reader} on {self.sight} at {self.created_at}"
+
+    class Meta:
+        ordering = ('-created_at', )

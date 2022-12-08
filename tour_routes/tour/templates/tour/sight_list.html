@@ -1,10 +1,19 @@
 {% extends 'tour/base.html' %}
+{% load static %}
 {% block title %}Sights{% endblock title %}
 {% block content %}
 <h1>Sights</h1>
 <ul>
     {% for sight in sight_list %}
-        <li>{{sight}}</li>
+        <li><p><h2>{{sight.name}}</h2></p>
+            <p>{{sight.facts}}</p>
+            <p>{{sight.street}}</p>
+            <p>{% if sight.photo %}  
+                <img src="{{ sight.photo.url }}">
+            {% else %}
+                <img src="{% static 'tour/img/LituaTravel-j_b.png' %}">
+            {% endif %}</p>
+        </li>
         {% comment %} <li><a href="{% url 'sight' sight.pk %}">{{sight}}</a></li> {% endcomment %}
 
     {% endfor %}

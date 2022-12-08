@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.views.generic import ListView, DetailView
 from . models import Country, City, Sight, Route, RouteSight, TourGuide
+from django.views.generic.edit import FormMixin
 from django.core.paginator import Paginator
 from . import models
 
@@ -52,9 +53,9 @@ def route(request, route_id):
 def route_view(request, route_id):
     return render(request, 'tour/route.html', {'route':get_object_or_404(Route, id=route_id)})
     
-# class SightListView(ListView):
-#     model = Sight
-#     template_name = 'tour/sight_list.html'
+class SightListView(ListView):
+    model = Sight
+    template_name = 'tour/sight_list.html'
 
 
 class SightDetailView(DetailView):
