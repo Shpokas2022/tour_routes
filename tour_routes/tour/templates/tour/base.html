@@ -16,7 +16,7 @@
                 <a href="{% url 'cities' %}">Cities</a>
                 {% comment %} <a href="{% url 'sights' %}">Sights</a> {% endcomment %}
                 <a href="{% url 'routes' %}">Routes</a>
-                <a href="{% url 'sights' %}">Sights</a>
+                {% comment %} <a href="{% url 'sights' %}">Sights</a> {% endcomment %}
                 <span class="spacer"></span>
                 {% if user.is_authenticated %}
                     <span>{{ user }} </span>
