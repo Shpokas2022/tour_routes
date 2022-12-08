@@ -10,7 +10,7 @@
         {% comment %} <p>{{ sight.facts }}</p> {% endcomment %}
 {#Įsidedu eilučių perkėlimą ir žodžių ribojimą #}
 {{ sight.facts|linebreaks|truncatewords:103 }}
-<p><a href="#">daugiau...</a></p>
+<p><a href="{% url 'sight' sight.pk     %}">daugiau...</a></p>
 <p>{{ sight.street }}, {{ sight.city }}</p>
 <p>{{ sight.get_google_link }}</p>
 {% comment %} <h3><a href="{% url 'sight_id' get_google_link %}">{{sight.google_link}}</a></h3> {% endcomment %}
