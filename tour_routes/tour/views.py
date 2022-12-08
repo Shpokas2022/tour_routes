@@ -60,5 +60,5 @@ class SightListView(ListView):
 
 class SightDetailView(DetailView):
     model = Sight
-    template_name = 'tour/sight_detail'
+    template_name = 'tour/sight_detail.html'
 
