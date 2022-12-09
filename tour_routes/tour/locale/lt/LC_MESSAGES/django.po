@@ -55,7 +55,7 @@ msgstr "koordinatės"
 
 #: .\tour\models.py:43
 msgid "city"
-msgstr "mistas"
+msgstr "miestas"
 
 #: .\tour\models.py:59
 msgid ""
@@ -63,7 +63,7 @@ msgid ""
 "then write only city name"
 msgstr ""
 "jei kelionis sustojimas, tuomet rašykit maršrutą su pagrindinių sustojimų "
-"pavadinimais, jei ekskursijos sustojimas, tada rašykit tik miesto pavadinimąS"
+"pavadinimais, jei ekskursijos sustojimas, tada rašykit tik miesto pavadinimą"
 
 #: .\tour\models.py:69
 msgid "route"
@@ -166,4 +166,4 @@ msgstr "Sukurta"
 #: .\tour\templates\tour\sight_list.html:3
 #: .\tour\templates\tour\sight_list.html:5
 msgid "Sights"
-msgstr "reginys"
+msgstr "Objektai"

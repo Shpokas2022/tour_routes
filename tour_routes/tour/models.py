@@ -92,7 +92,7 @@ class TourGuide(models.Model):
     )
 
     def __str__(self) -> str:
-        return self.user
+        return f"{self.user}"
 
 class SightReview(models.Model):
     sight = models.ForeignKey(
@@ -101,9 +101,9 @@ class SightReview(models.Model):
         on_delete=models.CASCADE, 
         related_name='reviews',
     )
-    reader = models.ForeignKey(
+    reviewer = models.ForeignKey(
         get_user_model(), 
-        verbose_name=_('reader'), 
+        verbose_name=_('reviewer'), 
         on_delete=models.CASCADE, 
         related_name='sight_reviews'
     )
@@ -111,7 +111,7 @@ class SightReview(models.Model):
     content = models.TextField("content", max_length=10000)
 
     def __str__(self):
-        return f"{self.reader} on {self.sight} at {self.created_at}"
+        return f"{self.reviewer} on {self.sight} at {self.created_at}"
 
     class Meta:
         ordering = ('-created_at', )

@@ -1,6 +1,7 @@
 {% extends 'tour/base.html' %}
-{% block title %}Slaptažodio priminimas nusiustas{% endblock title %}
+{% load i18n %}
+{% block title %}{% trans "Password reset email sent" %}{% endblock title %}
 {% block content %}
-<h1>Password reset email sent</h1>
-<p>Mes jums nusiuntėme el.laišką su slaptažodžio atnaujinimo nuoroda</p>
+<h1>{% trans "Password reset email sent" %}</h1>
+<p>{% trans "We have send you an e-mail with password re-new link" %}</p>
 {% endblock content %}

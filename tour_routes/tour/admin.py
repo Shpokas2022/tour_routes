@@ -30,7 +30,7 @@ class RouteSightAdmin(admin.ModelAdmin):
 
 
 class SightReviewAdmin(admin.ModelAdmin):
-    list_display = ('sight', 'reader', 'created_at')
+    list_display = ('sight', 'reviewer', 'created_at')
 
 
 admin.site.register(models.City, CityAdmin)

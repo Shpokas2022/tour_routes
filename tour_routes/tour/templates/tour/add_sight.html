@@ -1,0 +1,21 @@
+{% extends 'tour/base.html' %}
+
+{% block content %}
+    <h1> Add Sight to database </h1>
+    <br></br>
+    {% if submitted %}
+        Your imput was submitted succesfully !!!
+    {% else %}
+    
+        <form action="" method=POST>
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <imput type="submit" value="Submit">
+
+        </form>
+    {% endif %}
+{% endblock content %}
+
+

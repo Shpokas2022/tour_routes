@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-08 15:51+0200\n"
+"POT-Creation-Date: 2022-12-09 10:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,11 +19,22 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
 "11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
 "1 : n % 1 != 0 ? 2: 3);\n"
+#: .\user_profile\templates\registration\login.html:5
+msgid "Loggin error. Please try again."
+msgstr "Prisijungimo klaida. Pabandykite dar kartą"
 
-#: .\tour_routes\settings.py:114
-msgid "US ENGLISH"
-msgstr "Amerikos anglų"
+#: .\user_profile\templates\registration\login.html:10
+msgid "Please login. You do not have access to this information"
+msgstr "Jūs neturite prieeigos prie šios informacijos. Prašome prisijungti."
 
-#: .\tour_routes\settings.py:115
-msgid "Lithuanian"
-msgstr "LIETUVIŲ"
+#: .\user_profile\templates\registration\login.html:20
+msgid "User:"
+msgstr "Vartotojas"
+
+#: .\user_profile\templates\registration\login.html:24
+msgid "Password:"
+msgstr "Slaptažodis"
+
+#: .\user_profile\templates\registration\login.html:36
+msgid "Forgot the password?"
+msgstr "Pamiršote slaptažodį?"

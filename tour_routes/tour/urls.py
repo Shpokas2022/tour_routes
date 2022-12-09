@@ -5,9 +5,9 @@ urlpatterns = [
     path("", views.index, name='index'),
     path("cities/", views.cities, name='cities'),
     path("city/<int:city_id>/", views.city, name='city'),
-    # path("sights/", views.SightListView.as_view(), name='sights'),
     path("sight/<int:pk>/", views.SightDetailView.as_view(), name='sight'),
     path("routes/", views.routes, name='routes'),
     path("route/<int:route_id>/", views.route, name='route'),
+    path('add_sight/', views.add_sight, name='add_sight'),
 ]
 

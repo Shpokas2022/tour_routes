@@ -1,13 +1,14 @@
 {% extends 'tour/base.html' %}
-{% block title %}Login to {% endblock title %}
+{% load i18n %}
+{% block title %}Login to{% endblock title %}
 {% block content %}
 {% if form.errors %}
-    <p class="form-error">Prisijungimo klaida. Bandykite dar kartą.</p>
+    <p class="form-error">{% trans "Loggin error. Please try again." %}</p>
 {% endif %}
-{#Jei vartotojas bus prisiregistravęs ir negalės patekti į puslapį, ji vėl permes į Login-ą#}
+{#Jei vartotojas bus prisiregistravęs ir negalės patekti į puslapį, jį vėl permes į Login-ą#}
 {% if next %}
     {% if user.is_authenticated %}
-        <p class="form-error">Neturite prieeigos prie šios informacijos. Turite prisijungti.</p>
+        <p class="form-error">{% trans "Please login. You do not have access to this information" %}</p>
     {% endif %}
 {% endif %}
 
@@ -17,22 +18,22 @@
 {% csrf_token %}
 <table>
     <tr>
-        <td>Varotojas: </td>
+        <td>{% trans "User:" %} </td>
         <td>{{ form.username }}</td>
     </tr>
     <tr>
-        <td>Slaptažodis: </td>
+        <td>{% trans "Password:" %} </td>
         <td>{{ form.password }}</td>
     </tr>
     <tr>
     {#susikuriame tuscia td, tam, kad Prisijungti mygtukas susilygiuotu su kitais ivedimo laukais#}
     <td></td>
     <td>
-        <input type="submit" value="Prisijungti">
+        <input type="submit" value="Login">
         <input type="hidden" name="next" value="{{ next }}">
     </td>
 </table>
 </form>
-<p><a href="{% url 'password_reset' %}">Pamiršote slaptažodį?</a></p>
+<p><a href="{% url 'password_reset' %}">{% trans "Forgot the password?" %}</a></p>
 {% endblock content %}
 

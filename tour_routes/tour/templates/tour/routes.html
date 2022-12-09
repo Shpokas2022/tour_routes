@@ -3,6 +3,17 @@
 {% block title %}{% trans "Routes" %}{% endblock title %}
 {% block content %}
 <h1>{% trans "Routes" %}</h1>
+<div class="paginator">
+    {% if routes.has_other_pages %}
+        {% for page_number in routes.paginator.page_range %}
+            {% if page_number == routes.number %}
+                <span>{{ page_number }}</span>
+            {% else %}
+                <a href="?page={{ page_number }}">{{ page_number }}</a>
+            {% endif %}
+        {%endfor%}
+    {%endif%}
+</div>
 <ul>
     {% for route in routes %}
     {% comment %} <li>{{r}}</li> {% endcomment %}
