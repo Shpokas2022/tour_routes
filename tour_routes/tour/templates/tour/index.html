@@ -1,13 +1,12 @@
 {% extends 'tour/base.html' %}
-
-
+{% load i18n %}
 {% block content %}
-<h1>Kelionių maršrutų puslapis</h1>
+<h1>{% trans "Travel routes page" %}</h1>
 <ul>
-    <li>Total cities: {{ city_count }}</li>
-    <li>Total tours: {{ route_count }}</li>
-    <li>Total sights: {{ sight_count}}</li>
-    <li>Total visits: {{ visits_count}}</li>
+    <li>{% trans "Total cities:" %} {{ city_count }}</li>
+    <li>{% trans "Total tours:" %} {{ route_count }}</li>
+    <li>{% trans "Total sights:" %} {{ sight_count}}</li>
+    <li>{% trans "Total visits:" %} {{ visits_count}}</li>
 </ul>
 
 {% endblock content %}

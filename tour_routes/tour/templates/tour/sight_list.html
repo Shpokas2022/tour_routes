@@ -1,8 +1,8 @@
 {% extends 'tour/base.html' %}
 {% load static %}
-{% block title %}Sights{% endblock title %}
+{% block title %}{% trans "Sights" %}{% endblock title %}
 {% block content %}
-<h1>Sights</h1>
+<h1>{% trans "Sights" %}</h1>
 <ul>
     {% for sight in sight_list %}
         <li><p><h2>{{sight.name}}</h2></p>

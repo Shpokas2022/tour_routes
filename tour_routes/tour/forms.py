@@ -1,7 +1,7 @@
 from django import forms
 from .models import SightReview
 
-
+# Atsiliepimo formos formavimas
 class SightReviewForm(forms.ModelForm):
     class Meta:
         model = SightReview

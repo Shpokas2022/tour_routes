@@ -1,6 +1,6 @@
 {% extends 'tour/base.html' %}
-{% load static %}
-{% block title %}Route{% endblock title %}
+{% load static i18n %}
+{% block title %}{% trans "Route" %}{% endblock title %}
 {% block content %}
     <h1>{{route}}</h1>
     {% with sight_list as page_obj %}

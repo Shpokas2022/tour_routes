@@ -1,6 +1,6 @@
 {% extends 'tour/base.html' %}
-{% load static %}
-{% block title %}City{% endblock title %}
+{% load static i18n %}
+{% block title %}{% trans "City" %}{% endblock title %}
 {% comment %} <div class="paginator">
     {% if city.has_other_pages %}
         {% for page_number in city.paginator.page_range %}

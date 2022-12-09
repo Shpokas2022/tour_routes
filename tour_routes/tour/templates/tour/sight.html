@@ -1,7 +1,7 @@
 {% extends 'tour/base.html' %}
-{% block title %}Sight{% endblock title %}
+{% block title %}{% trans "Sight" %}{% endblock title %}
 {% block content %}
-    <h1>{{city}} sight</h1>
+    <h1>{{city}}{% trans " sight" %}</h1>
         <ul>
             {% comment %} {% for sight in city.sights.all %} {% endcomment %}
             <li><a>{{sights}}</a></li>

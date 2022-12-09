@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-{% load static %}
-<html lang="en">
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES%}
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,25 +14,36 @@
     <header>
         <div class="container">
             {% block nav %}
-                <a href="{% url 'index' %}">Home</a>
-                <a href="{% url 'cities' %}">Cities</a>
+                <a href="{% url 'index' %}">{% trans "Home" %}</a>
+                <a href="{% url 'cities' %}">{% trans "Cities" %}</a>
                 {% comment %} <a href="{% url 'sights' %}">Sights</a> {% endcomment %}
-                <a href="{% url 'routes' %}">Routes</a>
+                <a href="{% url 'routes' %}">{% trans "Routes" %}</a>
                 {% comment %} <a href="{% url 'sights' %}">Sights</a> {% endcomment %}
                 <span class="spacer"></span>
                 {% if user.is_authenticated %}
                     <span>{{ user }} </span>
                     {# Admino linkas nebus rodomas, kol nebus prisijungta su administratoriaus teisėmis#}
                     {% if user.is_superuser or user_is_staff %}
-                        <a href="{% url 'admin:index' %}">Admin</a>
+                        <a href="{% url 'admin:index' %}">{% trans "Admin" %}</a>
                     {% endif %}
-                    <a href="{% url 'logout' %}">Logout</a>
+                    <a href="{% url 'logout' %}">{% trans "Logout" %}</a>
                 {% else %}
-                <a href="{% url 'register' %}">Register</a>
+                <a href="{% url 'register' %}">{% trans "Register" %}</a>
                         <span></span>
     {#Jei esi puslapyje ir paskui nori prisijungti, tai ?next={{ request.path }} logika prisijungus gražins į tą patį puslapį #}                    
-                        <a href="{% url 'login' %}{% if request.path != '/account/logout' %}?next={{ request.path }}{% endif %}">Login</a>
-                {% endif %}          
+                        <a href="{% url 'login' %}{% if request.path != '/account/logout' %}?next={{ request.path }}{% endif %}">{% trans "Login" %}</a>
+                {% endif %}
+                <span>
+                    <form action="{% url 'set_language' %}" method="post">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ request.path }}">
+                        <select name="language" onchange="this.form.submit()">
+                            {% for lang in LANGUAGES %}
+                                <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %} selected{% endif %}>{{ lang.1 }}</option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                </span>   
             {% endblock nav %}
         </div>
     </header>

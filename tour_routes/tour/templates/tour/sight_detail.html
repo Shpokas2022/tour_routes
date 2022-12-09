@@ -1,5 +1,5 @@
 {% extends 'tour/base.html' %}
-{% load static %}
+{% load static i18n %}
 {% block title %}{{ object }}{% endblock title %}
 {% block content %}
     <h1>{{ object.name }}</h1>
@@ -11,15 +11,16 @@
         {% endif %}       
     </div>
     <div class="object-facts">
-        {{ object.facts }}
+        <p>{{ object.facts }}</p>
+        <p>{{ sight.get_google_link }}</p>
     </div>
     {% if sight.reviews %}
     {% for review in sight.reviews.all %}
     <p></p>
         <div >
-            <h3>Komentarai</h3>
+            <h3>{% trans "Comments" %}</h3>
             <div class='sight-review'>
-            <h4>Reader: {{ review.reader }}<span class="float-right">Created: {{review.created_at}}</span></h4>
+            <h4>{% trans "Reader: " %}{{ review.reader }}<span class="float-right">{% trans "Created" %}: {{review.created_at}}</span></h4>
             <p>{{ review.content }}</p>
             </div>
         </div>
