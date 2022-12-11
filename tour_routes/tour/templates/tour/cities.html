@@ -1,6 +1,6 @@
 {% extends 'tour/base.html' %}
 {% load static i18n %}
-{% block title %}{% trans "Cities" %}{% endblock title %}
+{% block title %}{{ block.super }}{% trans ". Cities" %}{% endblock title %}
 {% block content %}
 <h1>{% trans "Cities" %}</h1>
 <div class="paginator">

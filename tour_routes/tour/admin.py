@@ -40,3 +40,4 @@ admin.site.register(models.RouteSight, RouteSightAdmin)
 admin.site.register(models.TourGuide)
 admin.site.register(models.Sight, SightAdmin)
 admin.site.register(models.SightReview, SightReviewAdmin)
+

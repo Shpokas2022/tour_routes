@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 <li class='sight'>
     <a ref="{ url 'sight' sight.id %}"></a>
         {% if sight.photo %}  
@@ -7,12 +7,9 @@
             <img src="{% static 'tour/img/LituaTravel-j_b.png' %}">
         {% endif %}
         <h3>{{sight}}</h3>
-        {% comment %} <p>{{ sight.facts }}</p> {% endcomment %}
 {#Įsidedu eilučių perkėlimą ir žodžių ribojimą #}
-{{ sight.facts|linebreaks|truncatewords:50 }}
-<p><a href="{% url 'sight' sight.pk     %}">daugiau...</a></p>
+{{ sight.facts|linebreaks|truncatewords:30 }}
+<p><a href="{% url 'sight' sight.pk     %}">{% trans "more..." %}</a></p>
 <p>{{ sight.street }}, {{ sight.city }}</p>
 <p>{{ sight.get_google_link }}</p>
-{% comment %} <h3><a href="{% url 'sight_id' get_google_link %}">{{sight.google_link}}</a></h3> {% endcomment %}
-
 </li>

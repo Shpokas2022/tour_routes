@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-09 10:48+0200\n"
+"POT-Creation-Date: 2022-12-11 12:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,22 +19,70 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
 "11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
 "1 : n % 1 != 0 ? 2: 3);\n"
-#: .\user_profile\templates\registration\login.html:5
+
+#: .\user_profile\templates\registration\logged_out.html:3
+msgid "Log out"
+msgstr "Atsijungti"
+
+#: .\user_profile\templates\registration\logged_out.html:5
+msgid "Logged out"
+msgstr "Neprisijungęs"
+
+#: .\user_profile\templates\registration\logged_out.html:6
+msgid "End of the session."
+msgstr "Sesijos pabaiga"
+
+#: .\user_profile\templates\registration\logged_out.html:6
+msgid "Loggin again"
+msgstr "Prisijungti vėl"
+
+#: .\user_profile\templates\registration\login.html:6
 msgid "Loggin error. Please try again."
 msgstr "Prisijungimo klaida. Pabandykite dar kartą"
 
-#: .\user_profile\templates\registration\login.html:10
+#: .\user_profile\templates\registration\login.html:11
 msgid "Please login. You do not have access to this information"
 msgstr "Jūs neturite prieeigos prie šios informacijos. Prašome prisijungti."
 
-#: .\user_profile\templates\registration\login.html:20
+#: .\user_profile\templates\registration\login.html:21
 msgid "User:"
 msgstr "Vartotojas"
 
-#: .\user_profile\templates\registration\login.html:24
+#: .\user_profile\templates\registration\login.html:25
 msgid "Password:"
 msgstr "Slaptažodis"
 
-#: .\user_profile\templates\registration\login.html:36
+#: .\user_profile\templates\registration\login.html:37
 msgid "Forgot the password?"
 msgstr "Pamiršote slaptažodį?"
+
+#: .\user_profile\templates\registration\password_reset_complete.html:3
+#: .\user_profile\templates\registration\password_reset_complete.html:5
+msgid "Password succesfully changed"
+msgstr "Slaptažodis sėkmingai pakeistas"
+
+#: .\user_profile\templates\registration\password_reset_complete.html:6
+msgid "You can loggin"
+msgstr "Jūs galite prisijungti"
+
+#: .\user_profile\templates\registration\password_reset_complete.html:6
+msgid "again"
+msgstr "vėl"
+
+#: .\user_profile\templates\registration\password_reset_form.html:3
+#: .\user_profile\templates\registration\password_reset_form.html:5
+msgid "Password reset request"
+msgstr "Prašymas pakeisti slaptažodį"
+
+#: .\user_profile\templates\registration\password_reset_form.html:12
+msgid "Reset"
+msgstr "Atnaujinti"
+
+#: .\user_profile\templates\registration\pasword_reset_done.html:3
+#: .\user_profile\templates\registration\pasword_reset_done.html:5
+msgid "Password reset email sent"
+msgstr "El.laiškas su slaptažodžio atnaujinimu nusiųstas"
+
+#: .\user_profile\templates\registration\pasword_reset_done.html:6
+msgid "We have send you an e-mail with password re-new link"
+msgstr "Mes jums nusiuntėme el.laišką su slaptažodžio atnaujinimo nuoroda"

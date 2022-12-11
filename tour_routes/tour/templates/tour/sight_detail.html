@@ -1,6 +1,6 @@
 {% extends 'tour/base.html' %}
 {% load static i18n %}
-{% block title %}{{ object }}{% endblock title %}
+{% block title %}{{ block.super }}. {{ object }}{% endblock title %}
 {% block content %}
     <h1>{{ object.name }}</h1>
     <div class="sight-detail">

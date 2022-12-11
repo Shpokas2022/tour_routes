@@ -51,7 +51,6 @@ class Sight(models.Model):
     def get_google_link(self):
         return format_html('<a target="_blank" href="{link}">{link}</a>', link=self.google_link)
 
-       
 
 # Kelionės pradžios, pabaigos ir tarpiniai taškai
 class Route(models.Model):
@@ -81,6 +80,7 @@ class RouteSight(models.Model):
         return f"Stop on route {self.route}"
         # return f"Stop {self.sight} on route {self.route}"
 
+
 # Prisijungiantiems asmenims
 class TourGuide(models.Model):
     phone = models.CharField(_('phone'), max_length=20)
@@ -93,6 +93,7 @@ class TourGuide(models.Model):
 
     def __str__(self) -> str:
         return f"{self.user}"
+
 
 class SightReview(models.Model):
     sight = models.ForeignKey(
@@ -115,3 +116,5 @@ class SightReview(models.Model):
 
     class Meta:
         ordering = ('-created_at', )
+
+        

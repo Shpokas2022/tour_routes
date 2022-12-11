@@ -1,11 +1,8 @@
 {% extends 'tour/base.html' %}
 {% load static i18n %}
-{% block title %}{% trans "Route" %}{% endblock title %}
+{% block title %}{{ block.super }}{% trans ". Route" %}{% endblock title %}
 {% block content %}
     <h1>{{route}}</h1>
-    {% with sight_list as page_obj %}
-    {% include 'tour/inc/paginator_search.html' %}
-    {% endwith %}
         <ul class='sight_list'>
             {% for sight in route.sights.all %}
             {% with sight.sight as sight %}

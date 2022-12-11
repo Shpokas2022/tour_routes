@@ -8,6 +8,5 @@ urlpatterns = [
     path("sight/<int:pk>/", views.SightDetailView.as_view(), name='sight'),
     path("routes/", views.routes, name='routes'),
     path("route/<int:route_id>/", views.route, name='route'),
-    path('add_sight/', views.add_sight, name='add_sight'),
 ]
 

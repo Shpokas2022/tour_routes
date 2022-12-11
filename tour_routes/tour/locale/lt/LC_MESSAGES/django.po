@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-08 16:25+0200\n"
+"POT-Creation-Date: 2022-12-11 12:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "1 : n % 1 != 0 ? 2: 3);\n"
 
 #: .\tour\models.py:13 .\tour\models.py:22 .\tour\models.py:36
-#: .\tour\models.py:58
+#: .\tour\models.py:57
 msgid "name"
 msgstr "pavadinimas"
 
@@ -53,11 +53,11 @@ msgstr "gatvė"
 msgid "coordinates"
 msgstr "koordinatės"
 
-#: .\tour\models.py:43
+#: .\tour\models.py:43 .\tour\templates\tour\city.html:5
 msgid "city"
 msgstr "miestas"
 
-#: .\tour\models.py:59
+#: .\tour\models.py:58
 msgid ""
 "if travel route stop, then write rout with main stop names, if excursion, "
 "then write only city name"
@@ -65,11 +65,11 @@ msgstr ""
 "jei kelionis sustojimas, tuomet rašykit maršrutą su pagrindinių sustojimų "
 "pavadinimais, jei ekskursijos sustojimas, tada rašykit tik miesto pavadinimą"
 
-#: .\tour\models.py:69
+#: .\tour\models.py:68
 msgid "route"
 msgstr "maršrutas"
 
-#: .\tour\models.py:75 .\tour\models.py:100
+#: .\tour\models.py:74 .\tour\models.py:101
 msgid "sight"
 msgstr "objektas"
 
@@ -81,43 +81,60 @@ msgstr "telefonas"
 msgid "user_id"
 msgstr "vartotojo_id"
 
-#: .\tour\models.py:106
-msgid "reader"
-msgstr "skaitytojas"
+#: .\tour\models.py:107
+msgid "reviewer"
+msgstr "apžvalgininkas"
+
+#: .\tour\templates\tour\base.html:10
+#| msgid "Travel routes page"
+msgid "Travel routes site"
+msgstr "Kelionių maršrutų puslapis"
 
 #: .\tour\templates\tour\base.html:17
 msgid "Home"
 msgstr "Pradžia"
 
-#: .\tour\templates\tour\base.html:18 .\tour\templates\tour\cities.html:3
-#: .\tour\templates\tour\cities.html:5
+#: .\tour\templates\tour\base.html:18 .\tour\templates\tour\cities.html:5
 msgid "Cities"
 msgstr "Miestai"
 
-#: .\tour\templates\tour\base.html:21 .\tour\templates\tour\routes.html:3
-#: .\tour\templates\tour\routes.html:5
+#: .\tour\templates\tour\base.html:19 .\tour\templates\tour\routes.html:5
 msgid "Routes"
 msgstr "Maršrutai"
 
-#: .\tour\templates\tour\base.html:29
+#: .\tour\templates\tour\base.html:25
 msgid "Admin"
 msgstr "Admin"
 
-#: .\tour\templates\tour\base.html:31
+#: .\tour\templates\tour\base.html:27
 msgid "Logout"
 msgstr "Išeiti"
 
-#: .\tour\templates\tour\base.html:33
+#: .\tour\templates\tour\base.html:29
 msgid "Register"
 msgstr "Registruotis"
 
-#: .\tour\templates\tour\base.html:36
+#: .\tour\templates\tour\base.html:32
 msgid "Login"
-msgstr "Prisijunti"
+msgstr "Prisijungti"
+
+#: .\tour\templates\tour\cities.html:3
+#| msgid "Cities"
+msgid ". Cities"
+msgstr ". Miestai"
 
 #: .\tour\templates\tour\city.html:3
-msgid "City"
-msgstr "Miestas"
+#| msgid "City"
+msgid ". City"
+msgstr ". Miestas"
+
+#: .\tour\templates\tour\inc\paginator_search.html:14
+msgid "Search"
+msgstr ""
+
+#: .\tour\templates\tour\inc\sight_list_item.html:12
+msgid "more..."
+msgstr "daugiau..."
 
 #: .\tour\templates\tour\index.html:4
 msgid "Travel routes page"
@@ -140,8 +157,14 @@ msgid "Total visits:"
 msgstr "Viso apsilankymų:"
 
 #: .\tour\templates\tour\route.html:3
-msgid "Route"
-msgstr "Maršrutas"
+#| msgid "Route"
+msgid ". Route"
+msgstr ". Maršrutas"
+
+#: .\tour\templates\tour\routes.html:3
+#| msgid "Routes"
+msgid ". Routes"
+msgstr ". Maršrutai"
 
 #: .\tour\templates\tour\sight.html:2
 msgid "Sight"
@@ -149,7 +172,7 @@ msgstr "Objektas"
 
 #: .\tour\templates\tour\sight.html:4
 msgid " sight"
-msgstr "objektas"
+msgstr " objektas"
 
 #: .\tour\templates\tour\sight_detail.html:21
 msgid "Comments"
@@ -167,3 +190,6 @@ msgstr "Sukurta"
 #: .\tour\templates\tour\sight_list.html:5
 msgid "Sights"
 msgstr "Objektai"
+
+#~ msgid "reader"
+#~ msgstr "skaitytojas"

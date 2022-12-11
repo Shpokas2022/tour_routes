@@ -1,6 +1,6 @@
 {% extends 'tour/base.html' %}
 {% load static i18n %}
-{% block title %}{% trans "Routes" %}{% endblock title %}
+{% block title %}{{ block.super }}{% trans ". Routes" %}{% endblock title %}
 {% block content %}
 <h1>{% trans "Routes" %}</h1>
 <div class="paginator">
@@ -16,7 +16,6 @@
 </div>
 <ul>
     {% for route in routes %}
-    {% comment %} <li>{{r}}</li> {% endcomment %}
         <li><a href="{% url 'route' route.id %}">{{route}}</a></li>
     {% endfor %}
 </ul>

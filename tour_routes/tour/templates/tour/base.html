@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>{% block title %}{% trans "Travel routes site" %}{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'tour/css/base.css' %}">
 </head>
 <body>
@@ -16,9 +16,7 @@
             {% block nav %}
                 <a href="{% url 'index' %}">{% trans "Home" %}</a>
                 <a href="{% url 'cities' %}">{% trans "Cities" %}</a>
-                {% comment %} <a href="{% url 'sights' %}">Sights</a> {% endcomment %}
                 <a href="{% url 'routes' %}">{% trans "Routes" %}</a>
-                {% comment %} <a href="{% url 'add_sight' %}">{% trans "Add sight" %}</a> {% endcomment %}
                 <span class="spacer"></span>
                 {% if user.is_authenticated %}
                     <span>{{ user }} </span>
@@ -55,11 +53,7 @@
                 {% endfor %}
             {% endif %}
             {% block content %}
-            {% comment %} <ul>
-                {% for m in menu %}
-                    <li>{{ m }}</li>
-                {% endfor %}
-            </ul> {% endcomment %}
+
             {% endblock content %}
         </div>
     </main>
